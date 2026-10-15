@@ -5,18 +5,27 @@ alwaysApply: true
 
 # More Good Reviews MCP setup (Cursor)
 
-This plugin ships a default **project** MCP entry (`https://api.moregoodreviews.com/mcp`). Connect it under **Settings → Tools & MCP**, then sign in to More Good Reviews and approve scopes.
+The plugin `mcp.json` includes **only one** HTTP MCP (`https://api.moregoodreviews.com/mcp`). Cursor cannot bundle a different URL per user from the plugin alone. **Additional URLs are normal:** users add them in **Settings → Tools & MCP → Add new MCP server**.
 
-## Project MCP (reputation skills)
+## Bundled project MCP (start here)
 
-- **Default URL** — use the bundled connector; OAuth can let you pick a project when the URL is the generic host.
-- **Scoped URL (recommended for agencies)** — in each client project, open **Settings → MCP Server**, copy the full **MCP Server URL** (`…/mcp/p/…`), and add it as a **separate** MCP server in Cursor (one connector per business). White-label accounts must use the URL shown in the console, not a guessed host.
-- **Several clients** — repeat: duplicate the MCP entry in Cursor with a clear name (client name) and that project’s scoped URL.
+1. **Settings → Tools & MCP** — enable **more-good-reviews** from the plugin.
+2. **Sign in** / OAuth → approve scopes. Generic host may prompt for project at consent.
 
-## Agency MCP (optional)
+## Add scoped project MCP (agencies, white-label, fixed project)
 
-Agency admin tools (list/create projects, clients, team) use **Agency → MCP Server**. Copy that full URL (`…/mcp/a/…`) and add it as another MCP server in Cursor. Agency MCP does **not** replace project MCP for reviews, customers, or review requests.
+1. MGR: project **Settings → MCP Server** → copy full **MCP Server URL** (`…/mcp/p/…`).
+2. Cursor: **Settings → Tools & MCP** → **Add new MCP server** → HTTP → paste URL → name it (client name) → **Sign in**.
+
+Repeat for each client business. Reputation skills need **project** MCP; ask which client if several are connected.
+
+## Add agency MCP (optional admin)
+
+1. MGR: **Agency → MCP Server** → copy full URL (`…/mcp/a/…`).
+2. Cursor: **Add new MCP server** → paste → **Sign in**.
+
+Do **not** use agency MCP for `listReviews`, customers, or review requests for a client—use that client’s **project** URL.
 
 ## After connecting
 
-Use the reputation skills or slash commands only when at least one **project** MCP is connected and authorized.
+Use reputation skills or slash commands when at least one **project** MCP is connected and authorized.
