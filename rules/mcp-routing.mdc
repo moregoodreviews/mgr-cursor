@@ -1,0 +1,23 @@
+---
+description: Route More Good Reviews reputation skills to project MCP tools only; use agency MCP for agency-layer admin when the user asks explicitly.
+alwaysApply: true
+---
+
+# More Good Reviews MCP routing
+
+## Reputation skills (reputation-report, reputation-actions, review-pipeline)
+
+- Use **More Good Reviews Project API MCP** tools only (`listReviews`, `listCustomers`, `scheduleReviewRequest`, etc.).
+- Do **not** use agency MCP tools for these workflows.
+- If several project MCPs are connected, pick one consistently or ask which client project to use.
+- Ignore agency MCP when running these skills unless the user clearly switched to agency admin work.
+
+## Agency MCP
+
+- Use when the user asks for reseller-level tasks (client businesses, portal clients, team, agency settings).
+- Do **not** use agency MCP to fetch review feeds or customer lists for a client; connect or use that client’s **project** MCP instead.
+
+## Writes
+
+- **Review Pipeline** may call `scheduleReviewRequest` only after explicit user approval of the queue.
+- Confirm before destructive agency operations (delete project, roll keys, delete clients).

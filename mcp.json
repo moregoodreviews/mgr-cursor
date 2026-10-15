@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "more-good-reviews-project": {
+      "type": "http",
+      "url": "https://api.moregoodreviews.com/mcp"
+    }
+  }
+}

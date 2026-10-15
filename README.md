@@ -1,31 +1,44 @@
-# More Good Reviews Agent Skills for Claude
+# More Good Reviews — Cursor Plugin & Agent Skills
 
-[Claude Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview) for [More Good Reviews](https://moregoodreviews.com). Each skill pairs with the More Good Reviews MCP server to turn review and reputation data into action.
+[Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview) and a [Cursor](https://cursor.com) marketplace plugin for [More Good Reviews](https://moregoodreviews.com). Each skill uses the **project MCP Server** for reputation reports, action lists, and review outreach.
+
+**Primary audience:** agencies and operators managing one or many client projects in Cursor. Single-business users can also install the plugin or use Claude with a copied skill.
 
 ## Skills
 
 | Skill | Use when | What it does |
 |-------|----------|--------------|
-| [reputation-report](reputation-report/SKILL.md) | Reputation report, review summary, ratings trend, health check | Read-only report over a configurable period (weekly, monthly, quarterly, yearly): review volume, ratings, location and source breakdowns, reply coverage, outreach health, and prioritized next steps |
-| [reputation-actions](reputation-actions/SKILL.md) | What to do, how to improve, what to fix, priorities | Ranked to-do list (not a report, sends nothing): judges signals against the project's own history and recommends the next 7 highest-impact actions |
-| [review-pipeline](review-pipeline/SKILL.md) | Who to ask for reviews, weekly ask list, send review requests | Builds an eligible-customer queue from a segment (default never asked) and schedules requests via the project's templates after confirmation |
+| [reputation-report](skills/reputation-report/SKILL.md) | Reputation report, review summary, ratings trend, health check | Read-only report over a configurable period: review volume, ratings, location and source breakdowns, reply coverage, outreach health, and prioritized next steps |
+| [reputation-actions](skills/reputation-actions/SKILL.md) | What to do, how to improve, what to fix, priorities | Ranked to-do list (not a report, sends nothing): recommends the next highest-impact actions |
+| [review-pipeline](skills/review-pipeline/SKILL.md) | Who to ask for reviews, weekly ask list, send review requests | Builds an eligible-customer queue (default never asked) and schedules requests after confirmation |
 
 ## Requirements
 
-These skills call tools exposed by the More Good Reviews Project API MCP server. Connect that server before using a skill; the skills have no other data source.
+Connect the **More Good Reviews Project API MCP** server before using a skill. Optional: **Agency MCP** for reseller admin (separate URL from **Agency → MCP Server**); reputation skills still require **project** MCP per client.
 
-## Installing a skill
+## Cursor
 
-- **Claude Code** — copy a skill directory into `~/.claude/skills/` (personal) or `.claude/skills/` (project).
-- **claude.ai** — zip a skill directory and upload it under Settings > Capabilities.
+Install the **More Good Reviews** plugin from the Cursor marketplace (this repository). Connect the bundled project MCP under **Settings → Tools & MCP**, then sign in to More Good Reviews.
+
+- **Several client projects:** add one MCP entry per business using each project’s **Settings → MCP Server** URL.
+- **Agency admin:** add **Agency → MCP Server** as a separate MCP entry.
+
+Slash commands: `/reputation-report`, `/reputation-actions`, `/review-pipeline`.
+
+Documentation: [MCP Server skills](https://docs.moregoodreviews.com/platform/mcp-server/skills) (GitBook).
+
+## Claude (manual install)
+
+- **Claude Code** — copy a folder from `skills/<name>/` into `~/.claude/skills/` (personal) or `.claude/skills/` (project).
+- **claude.ai** — zip a skill folder and upload under **Settings → Capabilities**.
 - **Claude API** — upload via the Skills API (`/v1/skills`).
 
-Each skill is a self-contained directory with a `SKILL.md`; copy or zip the directory, not just the file.
+Copy the whole skill directory (including `SKILL.md`), not the file alone.
 
 ## Customizing
 
-Each skill ships with sensible defaults (lookback windows, rating and reply-coverage targets, list caps). Treat your copy as a starting point — edit the `Configurable inputs` and defaults in any `SKILL.md` to match your business. Your copy is independent: re-copying a skill to get updates will overwrite local edits, so keep notes on what you changed.
+Each skill has sensible defaults in **Configurable inputs** at the bottom of its `SKILL.md`. Edits in your copy are independent; re-copying from this repo overwrites local changes.
 
 ## Contributing
 
-Found a gap or have an improvement? Open an issue or pull request — suggestions for new skills and tweaks to existing ones are welcome.
+Open an issue or pull request on GitHub.

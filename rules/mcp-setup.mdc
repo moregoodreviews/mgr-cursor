@@ -1,0 +1,22 @@
+---
+description: Connect More Good Reviews project and optional agency MCP servers in Cursor after installing the mgr-cursor plugin.
+alwaysApply: true
+---
+
+# More Good Reviews MCP setup (Cursor)
+
+This plugin ships a default **project** MCP entry (`https://api.moregoodreviews.com/mcp`). Connect it under **Settings → Tools & MCP**, then sign in to More Good Reviews and approve scopes.
+
+## Project MCP (reputation skills)
+
+- **Default URL** — use the bundled connector; OAuth can let you pick a project when the URL is the generic host.
+- **Scoped URL (recommended for agencies)** — in each client project, open **Settings → MCP Server**, copy the full **MCP Server URL** (`…/mcp/p/…`), and add it as a **separate** MCP server in Cursor (one connector per business). White-label accounts must use the URL shown in the console, not a guessed host.
+- **Several clients** — repeat: duplicate the MCP entry in Cursor with a clear name (client name) and that project’s scoped URL.
+
+## Agency MCP (optional)
+
+Agency admin tools (list/create projects, clients, team) use **Agency → MCP Server**. Copy that full URL (`…/mcp/a/…`) and add it as another MCP server in Cursor. Agency MCP does **not** replace project MCP for reviews, customers, or review requests.
+
+## After connecting
+
+Use the reputation skills or slash commands only when at least one **project** MCP is connected and authorized.

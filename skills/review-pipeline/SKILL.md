@@ -1,6 +1,6 @@
 ---
 name: review-pipeline
-description: Finds customers eligible for a review request in a More Good Reviews project and schedules the requests after confirmation. Builds a ranked queue from a customer segment (default never asked), then sends via createAsk on approval. This SENDS outreach; it is not a report or a to-do list. Use when the user asks who to ask for reviews, wants a weekly ask list, or asks to send review requests to eligible customers.
+description: Finds customers eligible for a review request in a More Good Reviews project and schedules the requests after confirmation. Builds a ranked queue from a customer segment (default never asked), then sends via scheduleReviewRequest on approval. This SENDS outreach; it is not a report or a to-do list. Use when the user asks who to ask for reviews, wants a weekly ask list, or asks to send review requests to eligible customers.
 ---
 
 # Review Pipeline
@@ -13,7 +13,7 @@ Turn a customer segment into scheduled review requests for one More Good Reviews
 
 - Find eligible customers with `listCustomers`; do not over-fetch per-customer history.
 - The `not-asked` filter already excludes unsubscribed and archived customers from outreach eligibility — still confirm before sending.
-- Never call `createAsk` without explicit user approval of the final list.
+- Never call `scheduleReviewRequest` without explicit user approval of the final list.
 - Requests send through the **project's configured strategy and templates** (subject, copy, timing rules). This skill chooses *who* and *which channel*; it does not write custom message text.
 
 ## Step 1: Select the project
@@ -78,12 +78,12 @@ When the queue is empty, say so and suggest widening the window or switching seg
 
 Only after the user confirms specific rows or approves the full list:
 
-1. Call `createAsk` per approved customer using their `email` or `phone`.
+1. Call `scheduleReviewRequest` per approved customer using their `email` or `phone`.
 2. Set `channels` to `["email"]` or `["sms"]` by available contact and user preference.
 3. Set `reminders_count` from user input or default `2`.
 4. Report success and failure per customer. Do not retry failures without asking.
 
-Never schedule customers the user removed. Never call `createAsk` before Step 5.
+Never schedule customers the user removed. Never call `scheduleReviewRequest` before Step 5.
 
 ## Configurable inputs
 

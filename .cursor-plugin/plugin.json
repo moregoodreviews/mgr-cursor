@@ -1,0 +1,22 @@
+{
+  "name": "mgr-cursor",
+  "displayName": "More Good Reviews",
+  "version": "1.0.0",
+  "description": "Reputation report, action list, and review outreach skills for More Good Reviews project MCP. Built for agencies and operators managing one or many client projects.",
+  "author": {
+    "name": "More Good Reviews",
+    "email": "legal@moregoodreviews.com",
+    "url": "https://moregoodreviews.com"
+  },
+  "homepage": "https://moregoodreviews.com",
+  "repository": "https://github.com/moregoodreviews/mgr-cursor",
+  "license": "MIT",
+  "keywords": [
+    "more-good-reviews",
+    "reputation",
+    "reviews",
+    "mcp",
+    "agency"
+  ],
+  "logo": "assets/logo.png"
+}
