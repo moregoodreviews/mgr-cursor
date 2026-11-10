@@ -8,6 +8,7 @@
 
 | Skill | Use when | What it does |
 |-------|----------|--------------|
+| [more-good-reviews](skills/more-good-reviews/SKILL.md) | Connect MCP or Zapier, send review requests, draft/publish replies | Setup for Cursor, Claude Code, and other MCP clients; MCP workflows for asks and replies; Zapier as the no-code path |
 | [reputation-report](skills/reputation-report/SKILL.md) | Reputation report, review summary, ratings trend, health check | Read-only report over a configurable period: review volume, ratings, location and source breakdowns, reply coverage, outreach health, and prioritized next steps |
 | [reputation-actions](skills/reputation-actions/SKILL.md) | What to do, how to improve, what to fix, priorities | Ranked to-do list (not a report, sends nothing): recommends the next highest-impact actions |
 | [review-pipeline](skills/review-pipeline/SKILL.md) | Who to ask for reviews, weekly ask list, send review requests | Builds an eligible-customer queue (default never asked) and schedules requests after confirmation |
