@@ -1,6 +1,6 @@
 ---
 name: more-good-reviews
-description: Connects More Good Reviews' official project MCP server and Zapier automation so an assistant can schedule review requests and draft or publish review replies. Use when the user needs MCP setup for Claude Code, Cursor, or another MCP client; wants to send review requests; wants help drafting or publishing replies to reviews; or wants a no-code Zapier flow from a CRM, booking, or payment app into More Good Reviews.
+description: Connect More Good Reviews' MCP server or Zapier to send review requests and draft review replies. Use for MGR setup, review requests, or replying to reviews.
 ---
 
 # More Good Reviews
