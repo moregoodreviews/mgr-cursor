@@ -1,8 +1,8 @@
 # More Good Reviews — Cursor Plugin & Agent Skills
 
-[Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview) and a [Cursor](https://cursor.com) marketplace plugin for [More Good Reviews](https://moregoodreviews.com). Each skill uses the **project MCP Server** for reputation reports, action lists, and review outreach.
+[Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview) and a [Cursor](https://cursor.com) plugin (marketplace submission in review) for [More Good Reviews](https://moregoodreviews.com). Each skill uses the **project MCP Server** for reputation reports, action lists, and review outreach.
 
-**Primary audience:** agencies and operators managing one or many client projects in Cursor. Single-business users can also install the plugin or use Claude with a copied skill.
+**Primary audience:** agencies and operators managing one or many client projects in Cursor. Single-business users can also use Claude with a copied skill, or connect MCP in Cursor without the plugin.
 
 ## Skills
 
@@ -18,9 +18,11 @@ Connect the **More Good Reviews Project API MCP** server before using a skill. O
 
 ## Cursor
 
-Install the **More Good Reviews** plugin from the Cursor marketplace (this repository).
+**Marketplace:** The More Good Reviews plugin has been submitted to the Cursor marketplace and is not listed yet. Until it is published, connect MCP manually (below) or install locally.
 
-**Local development:** sync this repo to `~/.cursor/plugins/local/more-good-reviews` (folder name must match plugin id `more-good-reviews` — Cursor labels local imports from the folder name, e.g. `mgr-cursor` shows as “Mgr Cursor”). Enable local plugin imports, then reload the window.
+**Connect MCP without the plugin:** In Cursor, **Settings → Tools & MCP** → **Add new MCP server** → **HTTP** → paste your project **MCP Server URL** from More Good Reviews **Settings → MCP Server** → **Sign in**.
+
+**Local plugin install (skills and slash commands):** sync this repo to `~/.cursor/plugins/local/more-good-reviews` (folder name must match plugin id `more-good-reviews` — Cursor labels local imports from the folder name, e.g. `mgr-cursor` shows as “Mgr Cursor”). Enable local plugin imports, then reload the window.
 
 ```bash
 rsync -a --delete --exclude .git ./ ~/.cursor/plugins/local/more-good-reviews/
